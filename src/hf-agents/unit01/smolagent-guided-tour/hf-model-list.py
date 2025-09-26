@@ -24,7 +24,9 @@ def model_download_tool(task: str) -> str:
 # Now using the tool with a smolagents agent
 from smolagents import CodeAgent, TransformersModel, InferenceClientModel
 # model = TransformersModel(model_id="meta-llama/Llama-3.2-3B-Instruct")
-agent= CodeAgent(tools=[model_download_tool], model=InferenceClientModel("meta-llama/Llama-4-Scout-17B-16E-Instruct"))
+agent= CodeAgent(
+    tools=[model_download_tool], 
+    model=InferenceClientModel("meta-llama/Llama-4-Scout-17B-16E-Instruct"))
 agent.run(
     "Can you give me the name of the most downloaded model for 'text-to-video'?"
 )
